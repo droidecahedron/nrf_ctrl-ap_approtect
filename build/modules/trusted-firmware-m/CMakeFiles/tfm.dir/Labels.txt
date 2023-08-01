@@ -1,0 +1,13 @@
+# Target labels
+ tfm
+# Source files and their labels
+C:/nrf/ctrl-ap/approtect/build/modules/trusted-firmware-m/CMakeFiles/tfm
+C:/nrf/ctrl-ap/approtect/build/modules/trusted-firmware-m/CMakeFiles/tfm.rule
+C:/nrf/ctrl-ap/approtect/build/modules/trusted-firmware-m/CMakeFiles/tfm-complete.rule
+C:/nrf/ctrl-ap/approtect/build/modules/trusted-firmware-m/tfm-prefix/src/tfm-stamp/tfm-build.rule
+C:/nrf/ctrl-ap/approtect/build/modules/trusted-firmware-m/tfm-prefix/src/tfm-stamp/tfm-configure.rule
+C:/nrf/ctrl-ap/approtect/build/modules/trusted-firmware-m/tfm-prefix/src/tfm-stamp/tfm-download.rule
+C:/nrf/ctrl-ap/approtect/build/modules/trusted-firmware-m/tfm-prefix/src/tfm-stamp/tfm-install.rule
+C:/nrf/ctrl-ap/approtect/build/modules/trusted-firmware-m/tfm-prefix/src/tfm-stamp/tfm-mkdir.rule
+C:/nrf/ctrl-ap/approtect/build/modules/trusted-firmware-m/tfm-prefix/src/tfm-stamp/tfm-patch.rule
+C:/nrf/ctrl-ap/approtect/build/modules/trusted-firmware-m/tfm-prefix/src/tfm-stamp/tfm-update.rule
