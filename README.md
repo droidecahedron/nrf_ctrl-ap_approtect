@@ -1,5 +1,6 @@
 # APPROTECT SAMPLE
 **DISCLAIMER: If you enable both APPROTECT and ERASEPROTECT at the same time without setting the internal ERASEPROTECT.DISABLE register in firmware, you will no longer be able to program the nRF5340! It will be Bricked!**
+
 I am hijacking the eraseprotect sample to repurpose for approtect purposes.
 
 ## As is
@@ -22,7 +23,9 @@ If you want me to speed up on the fix, create an issue.
 - pynrfjprog 10.23.0
 
 > _Note_: You can find your pynrfjprog version with
+
 > Linux: pip freeze | grep pynrfjprog
+
 > Windows: pip freeze | findstr pynrfjprog
 
 ## Documentation
