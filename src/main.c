@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#include <zephyr/kernel.h>
-#include <zephyr/sys/printk.h>
+#include <zephyr.h>
+#include <sys/printk.h>
 
 static void config_nvmc(uint32_t val)
 {
@@ -18,14 +18,14 @@ void main(void)
 {
     uint32_t read_val;
 
-    printk("Start approtect sample.\n");
-    NRF_CTRLAP_S->APPROTECT.DISABLE = 0x00000001;
+    printk("Start eraseprotect sample.\n");
+    NRF_CTRLAP_S->ERASEPROTECT.DISABLE = 0x00000001;
     // Somehow, reading the value back does not work.
     // printk("NRF_CTRLAP_S->ERASEPROTECT.DISABLE: %08x\n",NRF_CTRLAP_S->ERASEPROTECT.DISABLE);
 
-    if(NRF_UICR_S->APPROTECT){
+    if(NRF_UICR_S->ERASEPROTECT){
         config_nvmc(NVMC_CONFIG_WEN_Wen);
-        NRF_UICR_S->APPROTECT=0x00000000;
+        NRF_UICR_S->ERASEPROTECT=0x00000000;
         config_nvmc(NVMC_CONFIG_WEN_Ren);
         NVIC_SystemReset();
     }
