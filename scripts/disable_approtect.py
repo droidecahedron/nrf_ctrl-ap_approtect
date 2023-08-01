@@ -9,7 +9,9 @@ target_cp = LowLevel.CoProcessor.CP_APPLICATION
 ap_id = 2 if target_cp == LowLevel.CoProcessor.CP_APPLICATION else 3
 # CTRL-AP addr offsets.
 approtect_disable_addr = 0x010 # DEBUGGER SIDE. CPU SIDE IS 0x544. https://infocenter.nordicsemi.com/index.jsp?topic=%2Fps_nrf5340%2Fctrl-ap.html&cp=4_0_0_7_9&anchor=register.APPROTECT.DISABLE
+secureapprotect_disable_addr = 0x014 # cpu side is 0x54c
 eraseall_status_addr = 0x008
+
 
 print("Start")
 with LowLevel.API("NRF53", log=True) as nrf:
@@ -19,6 +21,9 @@ with LowLevel.API("NRF53", log=True) as nrf:
     # Write values
     print("writing key: 0x", approtect_key, " to approtect_disable")
     nrf.write_access_port_register(ap_id, approtect_disable_addr, approtect_key)
+
+    #print("writing key: 0x", approtect_key, " to secureapprotect_disable")
+    #nrf.write_access_port_register(ap_id, approtect_disable_addr, approtect_key)
 
 """Are you able to do the below to read the approtect disable addr? there isnt a status equivalent."""
 #     print("Wait for eraseall to be finished")
