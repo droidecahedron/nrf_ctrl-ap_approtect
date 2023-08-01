@@ -17,6 +17,7 @@ with LowLevel.API("NRF53", log=True) as nrf:
     nrf.connect_to_emu_with_snr(my_snr)
 
     # Write values
+    print("writing key: 0x", approtect_key, " to approtect_disable")
     nrf.write_access_port_register(ap_id, approtect_disable_addr, approtect_key)
 
 """Are you able to do the below to read the approtect disable addr? there isnt a status equivalent."""
