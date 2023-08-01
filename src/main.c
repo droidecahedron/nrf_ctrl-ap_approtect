@@ -35,8 +35,9 @@ void main(void)
         NVIC_SystemReset();
     }
 
+    //I dont think this is the right place for this. I tried it at the start, no dice.
     /* Prevent processor from unlocking APPROTECT soft branch after this point. */
-    NRF_CTRLAP_S->APPROTECT.LOCK = CTRLAPPERI_APPROTECT_LOCK_LOCK_Locked;
+    //NRF_CTRLAP_S->APPROTECT.LOCK = CTRLAPPERI_APPROTECT_LOCK_LOCK_Locked;
 
     printk("Entering forever loop.\n");
     printk("Disclaimer: This example does not lock netcore, and can be unlocked by recovering netcore!\n See README for more information.\n");
