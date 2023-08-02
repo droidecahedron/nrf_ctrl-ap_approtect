@@ -2,7 +2,7 @@ from pynrfjprog import LowLevel
 from time import sleep
 # FILL IN YOUR INFO
 my_snr = 1050788780
-approtect_key = 0x00000001
+approtect_key = 0x00000055
 target_cp = LowLevel.CoProcessor.CP_APPLICATION
 # FROM DATASHEET
 # CTRL-AP ID according to datasheet debug and trace (2 = app, 3 = net)
