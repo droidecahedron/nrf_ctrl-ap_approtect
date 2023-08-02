@@ -4,7 +4,9 @@
 I am hijacking the eraseprotect sample to repurpose for approtect purposes.
 
 # Install this
+```py
 pip install pynrfjprog
+```
 
 ## As is
 This code/configuration is not thoroughly tested or qualified and should be considered provided “as-is”. Please test it with your application and let me know if you find any issues.
