@@ -1,7 +1,0 @@
-osource "c:/nrf/throughput/boards/shields/*/Kconfig.defconfig"
-osource "c:/nrf/llpm/boards/shields/*/Kconfig.defconfig"
-osource "c:/nrf/peripheral_lbs/boards/shields/*/Kconfig.defconfig"
-osource "c:/nrf/valve_llpm_experiments/nordic/llpm_experiments_1khz/llpm_experiments_1khz/llpm_central/boards/shields/*/Kconfig.defconfig"
-osource "c:/nrf/valve_llpm_experiments/nordic/llpm_experiments_1khz/llpm_experiments_1khz/llpm_peripheral/boards/shields/*/Kconfig.defconfig"
-osource "c:/nrf/lpuart/boards/shields/*/Kconfig.defconfig"
-osource "C:/ncs/v2.4.0/nrf/boards/shields/*/Kconfig.defconfig"
