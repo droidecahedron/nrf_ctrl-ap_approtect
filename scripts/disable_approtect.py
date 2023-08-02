@@ -24,16 +24,3 @@ with LowLevel.API("NRF53", log=True) as nrf:
 
     #print("writing key: 0x", approtect_key, " to secureapprotect_disable")
     #nrf.write_access_port_register(ap_id, approtect_disable_addr, approtect_key)
-
-"""Are you able to do the below to read the approtect disable addr? there isnt a status equivalent."""
-#     print("Wait for eraseall to be finished")
-#     finished_writing = False
-#     counter = 0
-#     while( nrf.read_access_port_register(ap_id, eraseall_status_addr) == True):
-#             counter+=1
-#             print(".",end="")
-#             sleep(0.01)
-#     if(counter == 0):
-#             print("Failed to disable eraseprotect. Try to reset nRF5340DK and run this script again.")
-#     else:
-#         print("\nDone. Run read_eraseprotect_status.py to test.")
