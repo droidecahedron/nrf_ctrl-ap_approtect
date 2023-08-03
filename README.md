@@ -1,24 +1,18 @@
 # APPROTECT SAMPLE
 **DISCLAIMER: If you enable both APPROTECT and ERASEPROTECT at the same time without setting the internal ERASEPROTECT.DISABLE register in firmware, you will no longer be able to program the nRF5340! It will be Bricked!**
 
-I am hijacking the eraseprotect sample to repurpose for approtect purposes.
+I am hijacking the eraseprotect sample from @hellesvik-nordic to repurpose for approtect purposes.
 
 ## As is
 This code/configuration is not thoroughly tested or qualified and should be considered provided “as-is”. Please test it with your application and let me know if you find any issues.
+There is also no handshaking to resolve what the key should be beforehand. The FW is just placing a static key in the appropriate register.
 
 # Error
-This sample do only work for the application core.
-The eraseprotect in this sample can be undone by recovering the network core.
-I have not added a fix for this yet.
-If you want me to speed up on the fix, create an issue# Error
-This sample do only work for the application core.
-The eraseprotect in this sample can be undone by recovering the network core.
-I have not added a fix for this yet.
-If you want me to speed up on the fix, create an issue.
+This sample is for the application core.
 
 ## Versions
 - nRF Connect SDK: v2.4.0
-- nRF7002DK
+- nRF7002DK or nRF5340DK
 - Python 3
 - pynrfjprog 10.23.0
 
@@ -39,28 +33,34 @@ nrfjprog --ids
 
 ## Building and Running
 First, build and flash the code to a nRF5340DK.
-Add --recover option to undo a previous ERASEPROTECT. 
+Add --recover option. 
 ```
 west build -p -b nrf5340dk_nrf5340_cpuapp
 west flash --recover
 ```
 
-The firmware will enable ERASEPROTECT on startup.
-Check the status from the [ERASEPROTECT.STATUS](https://infocenter.nordicsemi.com/topic/ps_nrf5340/ctrl-ap.html?cp=3_0_0_7_9_5_0_5#register.ERASEPROTECT.STATUS) register with a script:
+The firmware will place a key in the cpu-side of APPROTECT.DISABLE.
+
+
+To allow debug access, the firmware has written a key to an internal [APPROTECT.DISABLE](https://infocenter.nordicsemi.com/topic/ps_nrf5340/ctrl-ap.html?cp=4_0_0_7_9#unique_1852475219). Write the same key to another, different [APPROTECT.DISABLE](https://infocenter.nordicsemi.com/topic/ps_nrf5340/ctrl-ap.html?cp=4_0_0_7_9#register.APPROTECT.DISABLE) with the script:
 ```
-python3 scripts/read_eraseprotect_status.py
+python3 scripts/disable_approtect.py
 ```
 
-To disable eraseprotect, the firmware has written a key to an internal [ERASEPROTECT.DISABLE](https://infocenter.nordicsemi.com/topic/ps_nrf5340/ctrl-ap.html?cp=3_0_0_7_9_6_5#unique_1767310017). Write the same key to another, different [ERASEPROTECT.DISABLE](https://infocenter.nordicsemi.com/topic/ps_nrf5340/ctrl-ap.html?cp=3_0_0_7_9_6_7#unique_1545884140) with the script:
-```
-python3 scripts/disable_eraseprotecy.py
+There is a j-link.exe equivalent
+```cmd
+J-Link>SWDSelect
+J-Link>SWDWriteDP 1 0x50000000
+J-Link>SWDWriteDP 2 0x02000010
+J-Link>SWDWriteAP 0 <KEY>
 ```
 
-## Alternatives
-As long as APPROTECT is not enabled, you can disable the ERASEPROTECT by flashing with the --recover option, which will use the debugger to reset the chip.
-ERASEPROTECT can also be enabled by the debugger by running the script:
-```
-python3 scripts/enable_eraseprotect.py
+After resetting, you will have to submit key again to debug.
+
+## Fresh devkit, can't flash with the vscode gui!
+try the following:
+```cmd
+nrfjprog --recover
 ```
 
 ## Trusted Firmware-M
