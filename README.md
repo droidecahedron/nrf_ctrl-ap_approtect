@@ -34,7 +34,7 @@ When the key values match, access port will be set to non-secure mode, so you wi
 # Install this
 ```py
 pip install pynrfjprog
-```<p class="callout info">A success message</p>
+```
 
 ## As is
 This code/configuration is not thoroughly tested or qualified and should be considered provided “as-is”. Please test it with your application and let me know if you find any issues.
