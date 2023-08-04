@@ -91,7 +91,7 @@ J-Link>SWDWriteAP 0 0x00000055
 ```
 *note: 0x00000055 in the last command is the key*
 
-For an explanation on on the 0x02000010 value in the third command, check out [the following blog](https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/allowing-debugger-access-to-an-nrf5340)).
+For an explanation on on the 0x02000010 value in the third command, check out [the following blog](https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/allowing-debugger-access-to-an-nrf5340).
 (And recall the register we are interested in is at offset 0x010, and pay close attention to the APBANKSEL field in the SELECT register)
 
 After running this, you will find yourself able to attach the debugger! (Assuming the key matches the one in FW application.) 
