@@ -6,7 +6,7 @@ I am hijacking the eraseprotect sample from @hellesvik-nordic to repurpose for a
 # Intro
 Suppose there is a desire to have lock/unlock type of Debug Access to the application core.
 
-The nRF5340 has a control access port ([CTRL-AP]([Nordic Semiconductor Infocenter](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fps_nrf5340%2Fctrl-ap.html&anchor=ctrlap))) that enables control of the device when other debug access ports (DAP) have been disabled by access port protection. 
+The nRF5340 has a control access port ([CTRL-AP](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fps_nrf5340%2Fctrl-ap.html&anchor=ctrlap)) that enables control of the device when other debug access ports (DAP) have been disabled by access port protection. 
 
 > "Access port protection (APPROTECT) blocks the debugger access to the AHB-AP, and prevents read and write access to all CPU registers and memory-mapped addresses."
 
