@@ -22,8 +22,9 @@ The CTRLAP.APPROTECT.DISABLE register acts as a lock.
 
 Both the debugger and on-chip firmware must write the same non-zero 32-bit key value into their respective CTRLAP.APPROTECT.DISABLE registers.
 
-[CTRLAP.APPROTECT.DISABLE](https://infocenter.nordicsemi.com/topic/ps_nrf5340/ctrl-ap.html?cp=4_0_0_7_9#unique_1852475219) (CPU side)
-[CTRLAP.APPROTECT.DISABLE](https://infocenter.nordicsemi.com/topic/ps_nrf5340/ctrl-ap.html?cp=4_0_0_7_9#register.APPROTECT.DISABLE) (Debugger side)
+[CTRLAP.APPROTECT.DISABLE  (CPU side)](https://infocenter.nordicsemi.com/topic/ps_nrf5340/ctrl-ap.html?cp=4_0_0_7_9#unique_1852475219)
+
+[CTRLAP.APPROTECT.DISABLE (Debugger side)](https://infocenter.nordicsemi.com/topic/ps_nrf5340/ctrl-ap.html?cp=4_0_0_7_9#register.APPROTECT.DISABLE)
 
 When the key values match, access port will be set to non-secure mode, so you will be able to debug non-secure code.
 
