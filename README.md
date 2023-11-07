@@ -1,6 +1,8 @@
 # APPROTECT SAMPLE
 **DISCLAIMER: If you enable both APPROTECT and ERASEPROTECT at the same time without setting the internal ERASEPROTECT.DISABLE register in firmware, you will no longer be able to program the nRF5340! It will be Bricked!**
 
+> Note: related info for nRF52 https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/working-with-the-nrf52-series-improved-approtect
+
 I am hijacking the eraseprotect sample from @hellesvik-nordic to repurpose for approtect purposes.
 
 # Intro
