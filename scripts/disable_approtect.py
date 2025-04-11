@@ -1,7 +1,7 @@
 from pynrfjprog import LowLevel
 from time import sleep
 # FILL IN YOUR INFO
-my_snr = 1050788780
+my_snr = 1050082738
 approtect_key = 0x00000055
 target_cp = LowLevel.CoProcessor.CP_APPLICATION
 # FROM DATASHEET
